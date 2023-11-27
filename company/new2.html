@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+   <meta   http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IT company</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppis:wght@300;400;500;600;700;800;900&display=swap')
+  ;
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline:none ;
+    scroll-behavior: smooth;
+    font-family:'Poppis' sans-serif ;
+  }
+  :root{
+    --bg-color:white;
+    --text-color:#333;
+    --main-color:#754ef9;
+    --white-color:#fdfdfd;
+    --shadow-color:rgba(0,0,0,.2);
+   
+  }
+
+   .dark-mode
+   {
+
+    --bg-color:black;
+    --text-color:white;
+    --shadow-color:rgba(0,0,0,.7);
+   }
+
+   html 
+   {
+    font-size: 62.5%;
+    overflow-x: hidden;
+   }
+
+body
+{
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+  
+
+.header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 7%;
+  background:transparent ;
+  display: flex;
+  z-index:100 ;
+  align-items: center;
+  transition: .5s;
+}
+
+.header.sticky
+{
+  background: var(--bg-color);
+  box-shadow: 0 .1rem 1rem var(--shadow-color);
+}
+
+.logo
+{
+  font-size:2.5rem ;
+  color: var(--main-color);
+  font-weight: 600;
+  cursor: default;
+  margin-right: auto;
+}
+
+.navbar a
+{
+  position: relative;
+  font-size:1.7rem ;
+  color: var(--white-color);
+  font-weight:500 ;
+  margin-right: 3.5rem;
+}
+.header.sticky .navbar a
+{
+  color: var(--text-color);
+}
+
+.header.sticky .navbar a.active
+{
+  color: var(--main-color);
+}
+
+.header.sticky .navbar a::before
+{
+  background: var(--main-color);
+  
+}
+
+.navbar a.active::before
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: .2rem;
+  background: var(--main-color);
+}
+
+section
+{
+  min-height: 100vh;
+  padding: 10rem 7% 2rem;
+
+}
+.home
+{
+  display: flex;
+  align-items: center;
+}
+.home .home-content
+{
+  max-width: 44rem;
+}
+
+
+
+.home-content h3
+{
+
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: .3;
+}
+
+.home-content h1
+{
+  font-size:5.6rem ;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+
+
+.home-content p
+{
+  font-size:1.6rem ;
+
+}
+
+.social-media a 
+{
+  display: inline-flex;
+  justify-content:center ;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border:.2rem solid var(--white-color);
+  border-radius: 50%;
+  box-shadow: 0 .2rem .5rem var(--shadow-color);
+  font-size: 2rem;
+  color: var(--white-color);
+  margin: 2.5rem 1.5rem 3rem 0;
+  transition: .5s ease;
+}
+
+.social-media a:hover
+{
+  background: var(--main-color);
+  color: var(--white-color);
+}
+
+.btn 
+{
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background: var(--main-color);
+  border-radius: .6rem;
+  box-shadow: 0 .2rem .5rem var(--shadow-color);
+  font-size: 1.6rem;
+  color: var(--white-color);
+  letter-spacing: .1 rem;
+  font-weight: 600;
+  transition: .5s ease;
+  border:.2rem solid transparent ;
+}
+
+.btn:hover
+{
+  background: transparent;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.home .profession-container
+{
+  position: absolute;
+  top: 50%;
+  right:0;
+  transform: translatey(-50%);
+  width: 768px;
+  height: 768px;
+   
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home .profession-container .profession-box
+{
+  position: absolute;
+  top: 0;
+  right:0;
+  border-radius: 50%;
+  width: 768px;
+  height: 768px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home .profession-box .profession
+{
+  position: absolute;
+  display: flex;
+  left:0;
+  align-items: center;
+  flex-direction: column;
+  color: var(--main-color);
+  transform: rotate(calc(360deg / 4 * var(--i)));
+  transform-origin: 384px;
+  background: var(--bg-color);
+  padding: 13px 0;
+}
+
+
+.home .profession-box .profession:nth-child(1) i 
+{
+  margin-right:15px ;
+}
+
+.home .profession-box .profession:nth-child(2), .home .profession-box .profession:nth-child(4)
+{
+
+ 
+  padding-bottom: 20px;
+} 
+
+.home .profession i
+{
+  font-size: 3.8rem;
+}
+
+.home .profession h3
+{
+  font-size:3.2rem ;
+  line-height: 1;
+  font-weight: 600;
+}
+ 
+.home .profession-box .circle
+{
+  width: 560px;
+  height: 560px;
+  border:3px solid var(--main-color);
+  border-radius: 50%;
+
+}
+
+
+.home .profession-container .overlay
+{
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top:384px solid var(--main-color);
+  border-right:384px solid var(--main-color);
+  border-bottom:384px solid var(--main-color);
+  border-left:384px solid transparent;
+}
+
+.home-img img
+{
+  position: absolute;
+  bottom:0;
+  right: 0;
+  pointer-events: none;
+  width: 400px;
+  height: 500px;
+  margin-right: 150px;
+
+}
+
+span 
+{
+  color: var(--main-color);
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.about-img img
+{
+  width: 40vw;
+  height: 25vw;
+  border-radius: 20px;
+
+}
+
+.heading 
+{
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+
+.about-content h2
+{
+  text-align: left;
+  line-height: 1.2;
+}
+
+
+.about-content h3
+{
+  font-size: 2rem;
+}
+.about-content p
+{
+  font-size:1.6rem ;
+  margin: 2rem 0 3rem;
+}
+
+.services .services-container
+
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  grap:2rem;
+}
+
+.services-container .services-box
+{
+  flex:1 1 30rem;
+  padding: 3rem 2rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 .1rem .5rem var(--shadow-color);
+  text-align: center;
+  border-top: .6rem solid var(--main-color);
+   border-bottom: .6rem solid var(--main-color);
+   margin-left: 20px;
+   transition: .5s ease;
+   background: var(--bg-color);
+}
+
+.services-container .services-box:hover
+{
+  box-shadow:0 .1rem 2rem var(--shadow-color) ;
+  transform: scale(1.02);
+}
+.services-box i{
+ font-size: 7rem;
+ color: var(--main-color);
+}
+
+.services-box h3
+{
+  font-size: 2.6rem;
+  transition: .5s ease;
+}
+
+
+.services-box p
+{
+  font-size: 1.6rem;
+  margin: 1rem 0 3rem;
+}
+
+.services h2
+{
+  margin-bottom: 5rem;
+}
+
+.services
+{
+  min-height: auto;
+  padding-bottom: 7rem;
+}
+
+.services-box:hover h3
+{
+  color: var(--main-color);
+}
+
+.Protfolio
+{
+  padding-bottom: 10rem;
+}
+.Protfolio h2
+{
+  margin-bottom: 4rem;
+}
+
+.Protfolio .Protfolio-container
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+.Protfolio-container .Protfolio-box
+{
+  position: relative;
+  display: flex;
+  border-radius: 2rem;
+  box-shadow:0 0 1rem rgba(0, 0, 0, .1) ;
+  overflow: hidden;
+}
+
+.Protfolio-box img 
+{
+  width:100%;
+  height: 100%;
+  
+}
+
+
+.Protfolio-box:hover img
+{
+  transform: scale(1.1);
+} 
+.Protfolio-box:hover .Protfolio-layer
+{
+  opacity: 1;
+}
+.Protfolio-box .Protfolio-layer
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,.1),var(--main-color));
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  justify-content:center ;
+  opacity:0 ;
+  transition: .5s ease;
+}
+
+.Protfolio-layer h4
+{
+  font-size: 3rem;
+}
+
+.Protfolio-layer p{
+  font-size: 1.6rem;
+  margin: .3rem 0 1rem;
+}
+
+.Protfolio-layer a 
+{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background: var(--white-color);
+  border-radius: 50%;
+}
+
+.Protfolio-layer a i 
+{
+  font-size:2rem ;
+  color:#333 ;
+}
+
+
+.testimonial-container
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 5rem 1rem;
+}
+
+.testimonial-container .testimonial-wrapper
+{
+  position: relative;
+  max-width: 90rem;
+  width: 100%;
+  padding: 5rem;
+}
+.testimonial-wrapper .testimonial-box
+{
+  padding:1rem ;
+  border-radius: 2rem;
+  overflow: hidden;
+  
+}
+
+.testimonial-content .testimonial-slide
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: var(--bg-color);
+  border-radius: 2rem;
+  box-shadow: 0 .1rem .5rem var(--shadow-color);
+  padding: 3rem 5rem;
+  border-top: .8rem solid var(--main-color);
+  border-bottom: .8rem solid var(--main-color);
+}
+
+
+
+.testimonial-slide h3
+{
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+.testimonial-slide p 
+{
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.testimonial-box .swiper-button-next,.testimonial-box .swiper-button-prev
+{
+  color: var(--main-color); 
+}
+
+.testimonial-box .swiper-button-next
+{
+  right: 0;
+}
+.testimonial-box .swiper-button-prev
+{
+  left: 0;
+}
+
+.testimonial-box .swiper-pagination-bullet
+{
+  background: rgba(0, 0, 0, .8);
+}
+
+.testimonial-box .swiper-pagination-bullet-active
+{
+   background: var(--main-color);
+}
+
+.footer 
+{
+  display: flex;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+  padding: 2rem 7%;
+  background: var(--main-color);
+}
+
+.footer-text img
+{
+  
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid var(--white-color);
+}
+
+
+
+
+
+@media(max-width:1200px)
+{
+  html 
+  {
+    font-size: 55%;
+  }
+   .home .profession-container{
+    height: 85.8rem;
+   }
+   .home .profession-container .profession-box
+   {
+    right: -12rem;
+    height: 85.8rem;
+   }
+   .home .profession-container .overlay
+   {
+     right: -9rem;  }
+}
+
+
+@media (max-width:1024px)
+{
+  .header
+  {
+    padding: 2rem 3%;
+  }
+  section 
+  {
+    padding: 10rem 3% 2rem;
+  }
+  .home .profession-container .profession-box
+  {
+    right:-22rem;
+  }
+  .home .profession-container .overlay
+  {
+    right: -15rem;
+  }
+}
+
+
+
+@media (max-width:991px)
+{
+  .navbar a:nth-child(1),
+  .navbar a:nth-child(2)
+  {
+    color: var(--main-color);
+  }
+  .navbar a.active::before
+  {
+    background: var(--main-color);
+    opacity: .7;
+  }
+  .home .home-content
+  {
+    max-width: 50rem;
+  }
+ 
+  .home .profession-container .profession-box
+  {
+    right:-45rem;
+  }
+  .home .profession-container .overlay
+  {
+    right: -39.5rem;
+  }
+  .home-img img
+  {
+    display:none ;
+  }
+  .services,
+  .Protfolio
+  {
+    padding-bottom: 7rem;
+  }
+  .footer
+  {
+    padding: 2rem 3%; 
+  }
+}
+
+
+
+@media (max-width:768px)
+{
+
+
+
+  .header
+  {
+     height: 40px;
+  }
+.navbar a 
+{
+  font-size: 1.4rem;
+  color: var(--main-color);
+}
+.logo 
+{
+  font-size: 1.6rem;
+}
+  #menu-icon 
+  {
+    display: block;
+  }
+ 
+ 
+ .home .home-content
+  {
+    max-width: 50rem;
+  }
+ 
+ 
+
+.home
+{
+  padding: 0 3% 23rem;
+  justify-content: center;
+  text-align: center;
+
+   
+}
+
+.home-content h3
+{
+  font-size: 2.6rem;
+   
+}
+
+.home-content h1 
+{
+  font-size: 5rem;
+  
+}
+
+
+.social-media a  
+{
+  margin: 2.5rem .75rem 3rem;
+   
+}
+.home .profession-container 
+{
+  left: 0;
+  width: 100%;
+  height:100% ;
+   
+}
+
+.home .profession-container .profession-box
+{
+
+  position: fixed;
+  top:60%;
+  left: 0;
+  border-radius: 0;
+  width: 100%;
+   
+}
+.home .profession-box .profession
+{
+   padding: 0 13px;
+   left: auto;
+   transform-origin: 0;
+    
+}
+.home .profession-box .profession:nth-child(1)
+{
+  transform: rotate(-90deg) translate(-120px,
+    -210px);
+   
+}
+
+
+.home .profession-box .profession:nth-child(1) i
+{
+  margin-right: 0;
+   
+}
+
+
+.home .profession-box .profession:nth-child(2)
+{
+  transform: rotate(0deg) translate(0, -335px);
+   
+} 
+
+
+.home .profession-box .profession:nth-child(3)
+{
+   transform: rotate(90deg) translate(-115px, -450px);
+    
+}
+
+
+.home .profession-box .profession:nth-child(4)
+{
+   transform: rotate(180deg) translate(-220px, -335px);
+    
+}
+
+.home .profession-box .circle
+{
+
+  position: fixed;
+  width: 670px;
+  height: 670px;
+  z-index: -1; 
+ ;
+}
+
+
+.home .profession-container .overlay
+{
+  position: fixed;
+  top: 70rem;
+  left: 50%;
+  right: 0;
+  transform:rotate(90deg) translate(-50%, 50% ) scaleY(2);
+   
+  border-width: 23.9rem;
+} 
+
+.about
+{
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.about-content h2
+{
+  text-align: center;
+}
+.about-img img
+{
+  width: 70vw;
+  margin-top: -2rem;
+}
+.services h2,.Protfolio h2 
+{
+  margin-bottom: 3rem;
+}
+.Protfolio .Protfolio-container
+{
+  grid-template-columns: repeat(2,1fr);
+}
+
+.testimonial-container .testimonial-wrapper
+{
+  padding: 5rem 0;
+}
+.testimonial-content .testimonial-slide
+{
+  padding:  3rem 2rem;
+}
+.testimonial-box .swiper-button-next,
+.testimonial-box .swiper-button-prev,
+{
+  display: none;
+}
+
+.navbar a:nth-child(1),
+  .navbar a:nth-child(2)
+  .navbar a:nth-child(3)
+  .navbar a:nth-child(4)
+  {
+    color: var(--main-color);
+  }
+.navbar a.active::before
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  font-size: 1.2rem;
+  width: 100%;
+  height: .2rem;
+  background: var(--main-color);
+}
+
+
+
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+
+@media (max-width:617)
+{
+  .Protfolio .Protfolio-container
+  {
+    grid-template-columns: 1fr;
+
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width:450)
+{
+
+
+
+  html
+  {
+    font-size: 50%;
+  }
+  #darkMode-icon
+  {
+    right: 6rem;
+  }
+  .home
+  {
+    padding: 0 3% 30rem;
+  }
+  .home .profession-box .profession:nth-child(1)
+  {
+    transform: rotate(-90deg) translate(-110px, -220px);
+  }
+  .home .profession-box .profession:nth-child(2)
+  {
+    transform: rotate(0deg) translate(5px, -335px);
+  }
+  .home .profession-box .profession:nth-child(3)
+  {
+    transform: rotate(90deg) translate(-105px, -440px);
+  }
+  .home .profession-box .profession:nth-child(4)
+  {
+    transform: rotate(180deg) translate(-210px, -335px);
+  }
+
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 365px)
+
+
+{
+.btn 
+{
+  margin-top: 30px;
+}
+  .about-img img
+  {
+    width:  90vw;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+  }
+ 
+}
+
+
+.swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width:200px;
+      height:200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: .5rem solid var(--main-color);
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer h1,h5
+    {
+      color: white;
+      font-size: 2rem;
+     
+    }
+
+    .footer h4
+    {
+      color: white;
+      font-size: 1.4rem;
+     
+    }
+
+    .footer ul 
+    {
+      font-size: 1.2rem;
+      color: white;
+   
+    }
+
+
+    .footer e 
+    {
+      font-size: 1.2rem;
+      color:white;
+    }
+
+
+
+.footer-text p 
+
+    {
+  font-size:1.6rem;
+  color:var(--white-color);
+  background: var(--main-color);
+  text-align: center;
+    } 
+
+  
+  .footer-text i{
+    align-items: center;
+  }
+
+
+
+.testimonial-slide .swiper-slide.rating i
+{
+  font-size:18px;
+  margin:0 2px ;
+  color: #79b3f4;
+}
+
+.r .checked 
+{
+  color: orange;
+}
+
+
+
+
+.media-icons
+{
+  position:absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction:column ;
+  align-items: center;
+}
+
+.media-icons i 
+{
+  color: var(--main-color);
+  opacity: 0.6;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.media-icons i:hover
+{
+   opacity: 1;
+}
+
+
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+#darkMode-icon
+{
+  font-size: 3rem;
+  color: black;
+  font-weight: 600;
+}
+
+.dark-mode #darkMode-icon
+{
+  color:white;
+}
+
+
+</style>
+
+
+<body>
+
+<header class="header">
+  <a href="#" class="logo">spark Team</a>
+  <nav class="navbar">
+    <a href="#" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#Protfolio">Services</a>
+    <a href="#team">Team</a>
+  </nav>
+
+ <div class="bx bx-moon" id="darkMode-icon" onclick="myFunction()"></div>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");}
+</script>
+
+</header>
+
+
+<script type="text/javascript">
+  window.onscroll = () =>
+  {
+    let header = document.querySelector('.header');
+    header.classList.toggle('sticky',window.scrollY > 100);
+  };
+</script>
+
+
+<section class="home" id="home">
+  <div class="home-content">
+    <h3>IT trainer company</h3>
+    <h1>IT company</h1>
+    <p>Welcome to <span>spark company</span>, your gateway to digital excellence.
+       We are a budding tech firm passionate about crafting dynamic web and mobile applications. 
+       Our dedicated team brings fresh ideas and technical prowess to create user-friendly, innovative solutions.
+        From concept to launch, we specialize in turning visions into reality,
+         offering tailored apps that resonate with today's tech-savvy audience.
+          Join us on our journey as we embark on delivering intuitive,
+       impactful digital experiences for businesses and users alike.</p>
+    <br><br>
+    <a href="request.html" class="btn">submit request</a>
+    </div>
+
+    <div class="profession-container">
+      <div class="profession-box">
+        <div class="profession" style="--i:0">
+          <i class='bx bx-code'></i>
+          <h3>web developer</h3>
+        </div>
+
+         
+        <div class="circle"></div>
+      </div>
+      <div class="overlay"></div>
+    </div>
+    <div class="home-img">
+      <img src="111.png">
+    </div>
+  </div>
+  
+</section>
+
+<div style="height:100px"></div>
+
+<section class="about" id="about">
+  <div class="about-img" >
+    <img src="13.jpg">
+  </div>
+  <div class="about-content">
+    <h2 class="heading">About<span> us</span></h2>
+    <h3>we are a programming company</h3>
+    <p>we are passionate startup crafting recommended web and mobile apps.
+       With a commitment to client satisfaction and cutting-edge solutions, our team thrives on pushing boundaries.
+       Join us as we redefine digital experiences through creativity and expertise</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <h2 class="heading">Powerful features<span> to boost your productivity</span></h2>
+  <div class="services-container">
+    <div class="services-box">
+      <i class='bx bx-code'></i>
+      <h3>Secured Platform</h3>
+      <p>At spark, security is paramount.
+         We understand the importance of safeguarding your data and ensuring a reliable platform. 
+         Our infrastructure is fortified with robust security measures, employing the latest encryption technologies and best practices.</p>
+        <p style="display: none;">We prioritize your privacy and data integrity,
+          your trust in us is fortified by our unwavering commitment to maintaining a secure environment for your digital interactions.</p>
+         <button class="btn" onclick="toggleDescription()">Read More</button>
+       
+    </div>
+    <div class="services-box">
+      <i class='bx bx-paint'></i>
+      <h3>Advanced Analytics</h3>
+      <p>At spark, we leverage advanced analytics to unlock actionable insights from your data. 
+        Our cutting-edge tools and expertise in data science empower businesses to make informed decisions. </p>
+      <p style="display: none;"> Experience the power of data-driven decision-making with our tailored analytics solutions,
+         driving your business towards unprecedented growth and efficiency</p>
+      <button class="btn" onclick="toggleanalytics()">Read More</button>
+    </div>
+    <div class="services-box">
+    <i class='bx bx-party'></i>
+      <h3>Powerful Automation</h3>
+      <p>Innovation meets efficiency at [Company Name] through our robust automation solutions. Seamlessly integrating technology,
+         we empower businesses to optimize operations, reduce manual tasks, and boost productivity.</p>
+         <p style="display: none;"> Experience the transformative power of automation with us, simplifying complexities and accelerating success</p>
+         <button class="btn" onclick="toggleAutomation()">Read More</button>
+        
+    </div>
+  </div>
+</section>
+
+<div style="height:180px"></div>
+
+ <h2 class="heading">Businesses all over the world trust<span> <br>Buffer to build their brand</span></h2>
+<div class="bar">
+<div class="w3-row w3-center w3-padding-16" >
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge" >3 years</span><br>
+    in Business
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge" >10,000+</span><br>
+    Customers
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge" >3000+</span><br>
+  Monthly Blog Readers
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">150K+</span><br>
+  Social Followers
+  </div>
+</div> 
+</div>
+
+</div>
+
+
+ <div style="height:50px"></div>
+<section class="Protfolio" id="Protfolio">
+  <h2 class="heading">Our <span>Services</span></h2>
+  <div class="Protfolio-container">
+    <div class="Protfolio-box">
+      <img src="w.jpg">
+      <div class="Protfolio-layer">
+        <h1>Web Developer</h1>
+        
+        <a href="#"><i class='bx bx-link-alt'></i></a>
+      </div>
+    </div>
+    <div class="Protfolio-box">
+      <img src="f.jpg">
+      <div class="Protfolio-layer">
+        <h1>Flutter</h1>
+        
+        <a href="#"><i class='bx bx-link-alt'></i></a>
+      </div>
+    </div>
+    <div class="Protfolio-box">
+      <img src="d.jpg">
+      <div class="Protfolio-layer">
+        <h1>Data Entry</h1>
+        
+        <a href="#"><i class='bx bx-link-alt'></i></a>
+      </div>
+    </div>
+    <div class="Protfolio-box">
+      <img src="s.jpg">
+      <div class="Protfolio-layer">
+        <h1>Software Engineering</h1>
+      
+        <a href="#"><i class='bx bx-link-alt'></i></a>
+      </div>
+    </div>
+    <div class="Protfolio-box">
+      <img src="i.jpg">
+      <div class="Protfolio-layer">
+        <h1>It Solutions</h1>
+       
+        <a href="#"><i class='bx bx-link-alt'></i></a>
+      </div>
+    </div>
+    <div class="Protfolio-box">
+      <img src="t.jpg">
+      <div class="Protfolio-layer">
+        <h1>Trainers</h1>
+        
+        <a href="#"><i class='bx bx-link-alt'></i></a>
+      </div>
+    </div>
+</div>
+</section>
+  
+
+
+  <div class="testimonial-container" id="team">
+   <h2 class="heading">Our<span> Team</span></h2>
+
+   <div class="testimonial-wrapper">
+     <div class="testimonial-box mySwiper">
+       <div class="testimonial-content swiper-wrapper">
+         <div class="testimonial-slide swiper-slide">
+           <img src="1.jfif">
+             <div class="media-icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+           <i class="fa fa-telegram"></i>
+      </div>
+           <h3>danyal</h3>
+<div class="r">
+           <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+          
+
+
+         </div>
+         <div class="testimonial-slide swiper-slide">
+           <img src="2.jfif">
+             <div class="media-icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+           <i class="fa fa-telegram"></i>
+      </div>
+           <h3>nawwar</h3>
+           <div class="r">
+           <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+          
+         </div>
+         <div class="testimonial-slide swiper-slide">
+           <img src="3.jfif">
+             <div class="media-icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+           <i class="fa fa-telegram"></i>
+      </div>
+           <h3>mahmoud</h3>
+           <div class="r">
+           <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+           
+         </div>
+         <div class="testimonial-slide swiper-slide">
+           <img src="4.jfif">
+             <div class="media-icons">
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+           <i class="fa fa-telegram"></i>
+      </div>
+           <h3>naeel</h3>
+           <div class="r">
+           <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+</div>
+          
+         </div>
+  
+       </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  
+     </div>
+   </div>
+ </div> 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+ 
+
+  <div class="w3-quarter w3-center">
+    <h1>It Company</h1>
+    <h6 style="color:white;">It is a programming company provides many services in many domain in beautiful way
+</h6>
+
+<div class="social-media">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+       <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+         <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+       </div>
+    </h4>
+   </div>
+    <div class="w3-quarter w3-center">
+       <h1>Services</h1>
+      <ul>Web Developer</ul>
+       <ul>flutter</ul>
+        <ul>It Support</ul>
+         <ul>Data Entry</ul>
+          <ul>Trainers</ul>
+           <ul>Software</ul>
+   </div>
+    <div class="w3-quarter w3-center">
+      <h1>link page</h1>
+      <ul><a href="#home">Home</a></ul>
+      <ul><a href="#about"></i>About</ul>
+       <ul><a href="#Protfolio"></i>Services</a></ul>
+       <ul><a href="#team"></i>Team</a></ul>
+     
+   </div>
+
+   <div class="w3-quarter w3-center">
+   
+      <h1>Contact us</h1>
+      
+          <ul> <i class='bx bxs-location-plus' ></i>
+            Syria,As Suwayda, in Iprahim tour</ul>
+        <ul><i class='bx bxs-phone'></i>   Phone: +00 151515</ul>
+        <ul> <i class='bx bxs-envelope' ></i>   Email: mail@mail.com</ul>
+         <h1>Opening Hours</h1>
+        <ul>Saturday---Thursday</ul>
+         <ul>8:00 am---3:00pm</ul>
+         <ul>Friday Closed</ul>
+
+            </div> 
+              
+</footer>
+    <div class="footer-text">
+      <p>Copyright @ 2023 it trainers | All Right Reserved <a href="#home"><i class='bx bx-up-arrow-alt' style="border : .2rem solid var(--white-color);
+      border-radius: 5px;"></i></a> </p>
+      
+    </div>
+    
+    <script>
+      function toggleDescription() {
+          var moreText = document.querySelector("div:nth-of-type(1) > p:nth-of-type(2)");
+  
+          if (moreText.style.display === "none") {
+              moreText.style.display = "block";
+              document.querySelector("div:nth-of-type(1) > button").textContent = "Read Less";
+          } else {
+              moreText.style.display = "none";
+              document.querySelector("div:nth-of-type(1) > button").textContent = "Read More";
+          }
+      }
+  
+      function toggleAutomation() {
+          var moreText = document.querySelector("div:nth-of-type(3) > p:nth-of-type(2)");
+  
+          if (moreText.style.display === "none") {
+              moreText.style.display = "block";
+              document.querySelector("div:nth-of-type(2) > button").textContent = "Read Less";
+          } else {
+              moreText.style.display = "none";
+              document.querySelector("div:nth-of-type(2) > button").textContent = "Read More";
+          }
+      }
+
+      function toggleanalytics() {
+          var moreText = document.querySelector("div:nth-of-type(2) > p:nth-of-type(2)");
+  
+          if (moreText.style.display === "none") {
+              moreText.style.display = "block";
+              document.querySelector("div:nth-of-type(2) > button").textContent = "Read Less";
+          } else {
+              moreText.style.display = "none";
+              document.querySelector("div:nth-of-type(2) > button").textContent = "Read More";
+          }
+      }
+  </script>
+
+    
+<script>
+ 
+</script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jQuery.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+</html>
